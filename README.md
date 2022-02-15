@@ -1,10 +1,12 @@
 # Data Pipeline for Analyzing Goals Scored in Football Matches
 
 ## Overview
-This project intends to create a set of data models for analyzing goals scored in football matches (soccer) for a group of scouts to gain insights of individual player and team performances. In particular, the group is interested in finding out the top players who are involved in a lot of goals (either scored or assisted). A data pipeline is constructed to extract data from a website called FootyStats (https://footystats.org/) through REST APIs, transform the data according to the analytical needs, and load data into "Star-schemed" tables.
+This project intends to create a set of data models for analyzing goals scored in football matches (soccer) for a group of scouts to gain insights of individual player and team performances. In particular, the group is interested in finding out the top players who are involved in a lot of goals (either scored or assisted). A data pipeline is constructed to extract data from a website called FootyStats (https://footystats.org/) through REST APIs, transform the data according to analytical needs, and load data into "Star-schemed" tables.
 
 ## Tools and Technologies
-Apache Airflow <br>
+### Apache Airflow <br>
+Airflow is chosen as the workflow management tool for its simplicity, clarity, and flexibility in constructing and managing data pipelines.
+
 AWS Glue <br>
 AWS Athena
 
