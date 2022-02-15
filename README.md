@@ -30,6 +30,7 @@ As shown in the above screen shot, the workflow includes the following steps: <b
 
 ## Database Design
 The database tables employ a Star Schema with the purpose to optimize queries on song play analysis.
+<img title="a title" alt="Alt text" src="/images/db_design.png"></img>
 
 ### Fact Table
 1. songplays - records in log data associated with song plays.
