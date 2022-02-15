@@ -1,8 +1,31 @@
-# Postgres DB for Analyzing Music Streaming
+# Data Pipeline for Analyzing Goals Scored in Football Matches
 
 ## Overview
+This project intends to create a set of data models for analyzing goals scored in football matches (soccer) for a group of scouts to gain insights of individual player and team performances. In particular, the group is interested in finding out the top players who are involved in a lot of goals (either scored or assisted). A data pipeline is constructed to extract data from a website called FootyStats (https://footystats.org/) through REST APIs, transform the data according to the analytical needs, and load data into "Star-schemed" tables.
 
-A startup called Sparkify wants to analyze the data they've been collecting on songs and user activity on their new music streaming app. The analytics team is particularly interested in understanding what songs users are listening to. This project creates a Postgres database with tables designed to optimize queries on song play analysis.
+## Tools and Technologies
+Apache Airflow <br>
+AWS Glue <br>
+AWS Athena
+
+## Pipeline Design
+<img title="a title" alt="Alt text" src="/images/airflow-pipeline.png">
+
+
+## Database Design
+The database tables employ a Star Schema with the purpose to optimize queries on song play analysis.
+
+### Fact Table
+1. songplays - records in log data associated with song plays.
+
+
+### Dimension Tables
+1. users - users in the app.
+2. songs - songs in music database.
+3. artists - artists in music database.
+4. time - timestamps of records in songplays broken down into specific units.
+
+
 
 ## Files in the Repository
 
@@ -38,15 +61,3 @@ In Jupyter Lab, start a new command line interface by clicking "File" -> "New" -
 Remember to rerun `create_tables.py` to reset your tables before each time you run `etl.py`.
 
 
-## Database Design
-The database tables employ a Star Schema with the purpose to optimize queries on song play analysis.
-
-### Fact Table
-1. songplays - records in log data associated with song plays.
-
-
-### Dimension Tables
-1. users - users in the app.
-2. songs - songs in music database.
-3. artists - artists in music database.
-4. time - timestamps of records in songplays broken down into specific units.
