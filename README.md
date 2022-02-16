@@ -39,26 +39,26 @@ The database tables employ a Star Schema with the purpose to optimize queries on
 **goals**
 | Column Name | Data Type  | Column Description |
 | --------------- | --------------- | --------------- |
-| goal_id | integer | Unique identifier of a row. |
-| match_id | integer | Foreign key referencing the `matches` table. |
-| player_id | integer | Foreign key referencing the `players` table. |
-| team_id | integer | Foreign key referencing the `teams` table. |
-| date_unix | integer | Foreign key referencing the `time` table. |
-| player_id | integer | Foreign key referencing the `players` table. |
-| player_id | integer | Foreign key referencing the `players` table. |
-| player_id | integer | Foreign key referencing the `players` table. |
-| player_id | integer | Foreign key referencing the `players` table. |
-| player_id | integer | Foreign key referencing the `players` table. |
-| player_id | integer | Foreign key referencing the `players` table. |
-| player_id | integer | Foreign key referencing the `players` table. |
+| goal_id | integer | Unique identifier of a goal. |
+| match_id | integer | ID of the football match in which the goal was scored. |
+| player_id | integer | ID of the player who scored the goal. |
+| homeid | integer | ID of the team which played as the home team. |
+| awayid | integer | ID of the team which played as the away team. |
+| date_unix | integer | Match kickoff time in UNIX format. |
+| assist_player_id | integer | ID of the player who assisted the goal. |
+| extra | string | Additional information about the goal (an own goal or a penalty). |
+| time | string | The minute in which the goal was scored. Allows '+' sign to indicate stoppage time. |
 
 ### Dimension Tables
 **teams**
 | Column Name | Data Type  | Column Description |
 | --------------- | --------------- | --------------- |
-| Row 1 Column 1 | Row 1 Column 2 | Row 1 Column 3 |
-| Row 2 Column 1 | Row 2 Column 2 | Row 2 Column 3 |
-| Row 3 Column 1 | Row 3 Column 2 | Row 3 Column 3 |
+| team_id | integer | Unique identifier of a football team. |
+| name | string | Name of the team in native language. |
+| english_name | string | Name of the team in English. |
+| country | string | Country in which the team is based. |
+| continent | string | Continent in which the team participates in competitions. |
+| founded | integer | Year when the team was founded. |
 
 **players**
 | Column Name | Data Type  | Column Description |
