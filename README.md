@@ -52,11 +52,33 @@ There is a PySpark script `footy-stats-etl.py` in the `aws` folder. The script i
 The `airflow` folder contains code for Airflow DAG and custom operators.
 
 
-## How to Run the Scripts
-In Jupyter Lab, start a new command line interface by clicking "File" -> "New" -> "Terminal".<br>
-1. Run command `python create_tables.py`.
-2. Run command `python etl.py`.<br>
+## How to Run the Pipeline
+The following steps are required to run the pipeline.<br>
+1. Create local staging directories on the server where Airflow is to run. For example, name the directories `/home/workspace/staging/summary/` and `/home/workspace/staging/detail/`. These are used as parameters in the `get_today_matches` task.
+2. Create S3 bucket and folders. Pass them to the `upload_match_detail` task.
+3. Create another S3 bucket which is used to hold Athena query results. Pass it to the `run_quality_checks` task.
+4. Set up a Glue job in AWS and pass the job name to the `run_glue_job` task.
+5. Start the Airflow server.
+6. In the Airflow GUI interface, turn on the `footy_stats_dag`.
 
-Remember to rerun `create_tables.py` to reset your tables before each time you run `etl.py`.
 
+## Sample Queries
+**List match details:**<br>
 
+    select home_name, homegoalcount, awaygoalcount, away_name, stadium_name, ko_ts
+    from "capstone"."matches" m, "capstone"."time" t
+    where m.date_unix = t.date_unix
+    limit 10
+
+<img title="a title" alt="Alt text" src="/images/matches.png"></img>
+
+**List the top 5 goal scorers:**<br>
+
+    Select count(goal_id) as goals_scored, p.known_as as name
+    from goals g, players p
+    where g.player_id = p.player_id
+    group by p.known_as
+    order by goals_scored desc
+    limit 5
+
+<img title="a title" alt="Alt text" src="/images/top_goals.png"></img>
