@@ -63,9 +63,16 @@ The database tables employ a Star Schema with the purpose to optimize queries on
 **players**
 | Column Name | Data Type  | Column Description |
 | --------------- | --------------- | --------------- |
-| Row 1 Column 1 | Row 1 Column 2 | Row 1 Column 3 |
-| Row 2 Column 1 | Row 2 Column 2 | Row 2 Column 3 |
-| Row 3 Column 1 | Row 3 Column 2 | Row 3 Column 3 |
+| player_id | integer | Unique identifier of a player. |
+| first_name | string | First name of the player. |
+| last_name | string | Last name of the player. |
+| age | integer | Age of the player. |
+| club_team_id | integer | ID of the team the player plays for. |
+| height | integer | Height of the player in centimeters. |
+| weight | integer | Weight of the player in kilograms. |
+| position | string | Position the player plays on the pitch. |
+| nationality | string | Nationality of the player. |
+| known_as | string | The name the player usually goes by. |
 
 **matches**
 | Column Name | Data Type  | Column Description |
