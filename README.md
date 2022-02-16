@@ -77,17 +77,32 @@ The database tables employ a Star Schema with the purpose to optimize queries on
 **matches**
 | Column Name | Data Type  | Column Description |
 | --------------- | --------------- | --------------- |
-| Row 1 Column 1 | Row 1 Column 2 | Row 1 Column 3 |
-| Row 2 Column 1 | Row 2 Column 2 | Row 2 Column 3 |
-| Row 3 Column 1 | Row 3 Column 2 | Row 3 Column 3 |
+| match_id | integer | Unique identifier of a match. |
+| homeid | integer | ID of the team which played as the home team. |
+| home_name | string | Name of the home team. |
+| homegoalcount | integer | Number of goals the home team scored in the match. |
+| awayid | integer | ID of the team which played as the away team. |
+| away_name | string | Name of the away team. |
+| awaygoalcount | integer | Number of goals the away team scored in the match. |
+| date_unix | integer | Match kickoff time in UNIX format. |
+| totalgoalcount | integer | Number of goals both team scored in the match. |
+| stadium_location | string | Address of the stadium. |
+| stadium_name | string | Name of the stadium. |
+| attendance | integer | Number of spectators attending the match. |
+| team_a_xg | double | Number of goals the home team was expected to score during the match. |
+| team_b_xg | double | Number of goals the away team was expected to score during the match. |
 
 **time**
 | Column Name | Data Type  | Column Description |
 | --------------- | --------------- | --------------- |
-| Row 1 Column 1 | Row 1 Column 2 | Row 1 Column 3 |
-| Row 2 Column 1 | Row 2 Column 2 | Row 2 Column 3 |
-| Row 3 Column 1 | Row 3 Column 2 | Row 3 Column 3 |
-
+| date_unix | integer | Match kickoff time in UNIX format. |
+| ko_ts | timestamp | Match kickoff time in `YYYY-MM-DD HH:MM:SS` format. |
+| hour | int | Hour of the day. |
+| day | int | Day of the month. |
+| week | int | Week of the year. |
+| month | int | Month of the year. |
+| year | int | Year. |
+| weekday | int | Day of the week. |
 
 ## Files in the Repository
 
