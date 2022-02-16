@@ -34,6 +34,54 @@ The database tables employ a Star Schema with the purpose to optimize queries on
 <img title="a title" alt="Alt text" src="/images/db_design.png"></img>
 
 
+## Data Dictionary
+### Fact Table
+**goals**
+| Column Name | Data Type  | Column Description |
+| --------------- | --------------- | --------------- |
+| goal_id | integer | Unique identifier of a row. |
+| match_id | integer | Foreign key referencing the `matches` table. |
+| player_id | integer | Foreign key referencing the `players` table. |
+| team_id | integer | Foreign key referencing the `teams` table. |
+| date_unix | integer | Foreign key referencing the `time` table. |
+| player_id | integer | Foreign key referencing the `players` table. |
+| player_id | integer | Foreign key referencing the `players` table. |
+| player_id | integer | Foreign key referencing the `players` table. |
+| player_id | integer | Foreign key referencing the `players` table. |
+| player_id | integer | Foreign key referencing the `players` table. |
+| player_id | integer | Foreign key referencing the `players` table. |
+| player_id | integer | Foreign key referencing the `players` table. |
+
+### Dimension Tables
+**teams**
+| Column Name | Data Type  | Column Description |
+| --------------- | --------------- | --------------- |
+| Row 1 Column 1 | Row 1 Column 2 | Row 1 Column 3 |
+| Row 2 Column 1 | Row 2 Column 2 | Row 2 Column 3 |
+| Row 3 Column 1 | Row 3 Column 2 | Row 3 Column 3 |
+
+**players**
+| Column Name | Data Type  | Column Description |
+| --------------- | --------------- | --------------- |
+| Row 1 Column 1 | Row 1 Column 2 | Row 1 Column 3 |
+| Row 2 Column 1 | Row 2 Column 2 | Row 2 Column 3 |
+| Row 3 Column 1 | Row 3 Column 2 | Row 3 Column 3 |
+
+**matches**
+| Column Name | Data Type  | Column Description |
+| --------------- | --------------- | --------------- |
+| Row 1 Column 1 | Row 1 Column 2 | Row 1 Column 3 |
+| Row 2 Column 1 | Row 2 Column 2 | Row 2 Column 3 |
+| Row 3 Column 1 | Row 3 Column 2 | Row 3 Column 3 |
+
+**time**
+| Column Name | Data Type  | Column Description |
+| --------------- | --------------- | --------------- |
+| Row 1 Column 1 | Row 1 Column 2 | Row 1 Column 3 |
+| Row 2 Column 1 | Row 2 Column 2 | Row 2 Column 3 |
+| Row 3 Column 1 | Row 3 Column 2 | Row 3 Column 3 |
+
+
 ## Files in the Repository
 
 ### Datasets
