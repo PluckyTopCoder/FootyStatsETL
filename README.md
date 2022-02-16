@@ -6,9 +6,10 @@ This project intends to create a set of data models for analyzing goals scored i
 ## Tools and Technologies
 ### Apache Airflow
 Airflow is chosen as the workflow management tool for its simplicity, clarity, and flexibility in constructing and managing data pipelines.
+The data pipeline created in this project needs to be run on a daily basis by 7 am every day. This can be easily set up and is taken care of by the scheduling functionality of Airflow.
 
 ### AWS Glue
-The processing of data is written in PySpark and is run in an AWS Glue job. Glue is a fully-managed AWS service, meaning that there is no need to worry about the infrastructures. It also allows for easy scaling when data volume grows.
+The processing of data is written in PySpark and is run in an AWS Glue job. Glue is a fully-managed AWS service, meaning that there is no need to worry about the infrastructures. It also allows for easy scaling when data volume grows. For instance, if the data is increased by 100 times, we can still achieve the same level of performance by adjusting the number of workers accordingly in Glue job settings.
 
 ### AWS S3
 The raw data and processed data are stored in AWS S3, which offers industry-leading scalability, data availability, security, and performance.
